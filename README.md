@@ -1,5 +1,4 @@
-# Budget-Buddy.
-# Budget-Buddy.
+
 <div align="center">
 
 # 💸 Budget Buddy
