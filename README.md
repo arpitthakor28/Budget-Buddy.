@@ -1,100 +1,107 @@
-✨ AirSketch
-🎨 Draw in the Air — No Limits, Just Creativity
+README
+Budget-Buddy.
+💸 Budget Buddy
+Your Smart Personal Finance Companion
+Android Java Supabase SQLite License
 
-🌐 Live App:
-👉 https://airsketch-f610c.web.app
+📱 About Budget Buddy
+Budget Buddy is a feature-rich Android personal finance app built to help users track their money, plan budgets, manage trips, and stay on top of loans — all within a premium, theme-aware UI.
 
-📱 About AirSketch
-
-AirSketch is a next-generation web drawing application that lets users create sketches using gestures and real-time interaction — redefining how creativity meets technology.
-
-💡 Designed with performance and simplicity in mind, AirSketch delivers a smooth, responsive, and immersive drawing experience directly in your browser.
+💡 Built with clean architecture, local + cloud data sync via Supabase, and a visually stunning dark/light theme experience.
 
 ✨ Features
 Feature	Description
-✋ Gesture Drawing	Draw using motion-based or interactive inputs
-⚡ Real-Time Rendering	Instant and smooth drawing experience
-🎨 Smart Canvas	Clean and responsive drawing surface
-🖌️ Multiple Tools	Switch between drawing styles and tools
-🌗 Theme Support	Elegant UI with modern design
-🌍 Web-Based	No installation required — runs in browser
-🚀 Fast Performance	Optimized for speed and responsiveness
+📊 Dashboard	At-a-glance overview of income, expenses & recent activity
+💰 Transactions	Add, view, and manage all financial transactions
+🗂️ Trip Management	Track trip-wise expenses with detailed breakdowns
+📈 Budget Planner	Set category budgets and monitor spending vs. limits
+🏦 Loan Tracker	Manage loans given/received with status tracking
+🌗 Dark & Light Mode	Seamlessly switch between premium dark and light themes
+👤 User Profiles	Auth-based multi-user support with profile management
+🔒 Multi-Identifier Login	Sign in with email or phone number
+🔄 Cloud Sync	Supabase-powered backend for cross-device data sync
 🏗️ Architecture & Tech Stack
-AirSketch
-├── 🌐 Frontend (Next.js / React)
-│   ├── Components (Canvas, Toolbar, UI Elements)
-│   ├── Hooks (State & gesture handling)
-│   ├── Pages (Main drawing interface)
-│   └── Styles (Modern responsive UI)
+Budget Buddy
+├── 📱 Android (Java)
+│   ├── Activities (Dashboard, Budget, Trips, Loans, Profile...)
+│   ├── Adapters (RecyclerView-based transaction & activity lists)
+│   ├── Database (SQLite local DB + Room-like DAOs)
+│   ├── Network (Supabase REST API integration)
+│   ├── Workers (Background sync workers)
+│   └── Utils (Theme helpers, formatters, validators)
 │
-└── ☁️ Deployment
-    ├── Firebase Hosting
-    └── CDN for fast global delivery
+└── ☁️ Backend (Supabase)
+    ├── PostgreSQL Database
+    ├── Row-Level Security (data isolation per user)
+    └── Auth (Email + Phone login)
 🛠️ Built With
-Framework: Next.js (React)
-Language: JavaScript / TypeScript
-Canvas Rendering: HTML5 Canvas API
-Deployment: Firebase Hosting
-UI Design: Modern minimal UI principles
+Language: Java (Android)
+UI: Custom XML layouts with Material Design components
+Local Storage: SQLite
+Cloud Backend: Supabase (PostgreSQL + Auth)
+Build Tool: Gradle
+Theming: Dynamic Dark/Light theme with DayNight support
+Animations: Custom Lottie-style splash & logo animations
 📸 Screenshots
-
-🚧 Coming soon — Live preview is available below
-
-👉 https://airsketch-f610c.web.app
+Coming soon — Dark & Light theme previews
 
 🚀 Getting Started
 Prerequisites
-Node.js (v16 or higher)
-npm or yarn
+Android Studio (Hedgehog or newer)
+Android SDK 26+
+A Supabase project (for cloud features)
 Setup
 # 1. Clone the repository
-git clone https://github.com/YOUR_USERNAME/AirSketch.git
+git clone https://github.com/YOUR_USERNAME/Budget-Buddy.git
 
-# 2. Navigate to project folder
-cd AirSketch
+# 2. Open in Android Studio
 
-# 3. Install dependencies
-npm install
+# 3. Configure Supabase
+# Add your Supabase URL and anon key to:
+# app/src/main/res/values/supabase_config.xml
 
-# 4. Run development server
-npm run dev
-Run Locally
+# 4. Run the app on an emulator or physical device
+Supabase Setup
+Run the SQL script to initialize your database:
 
-Open your browser:
-
-http://localhost:3000
+# Execute the provided schema
+supabase_setup.sql
 📁 Project Structure
-app/
-├── components/       # UI components (Canvas, Toolbar, Buttons)
-├── hooks/            # Custom hooks for logic
-├── pages/            # Application pages
-├── styles/           # Styling files
-├── public/           # Static assets
-└── utils/            # Helper functions
-🎯 Use Cases
-🎨 Creative digital sketching
-🧠 Brainstorming ideas visually
-🧑‍🏫 Teaching & demonstrations
-💻 Interactive web experiments
-🔮 Future Improvements
-💾 Save & export sketches
-🤖 AI-assisted drawing tools
-👥 Real-time collaboration
-📱 Mobile gesture optimization
-🎥 Advanced motion tracking
+app/src/main/java/com/moneyapp/
+│
+├── DashboardActivity.java       # Home screen with stats & activity feed
+├── BudgetActivity.java          # Budget planning & category tracking
+├── TripListActivity.java        # Trip overview & management
+├── TripDetailActivity.java      # Per-trip expense tracking
+├── LoanActivity.java            # Loan management
+├── TransactionsActivity.java    # Full transaction history
+├── LoginActivity.java           # Multi-identifier auth
+├── RegisterActivity.java        # New user registration
+├── ProfileActivity.java         # User profile & settings
+├── SettingsActivity.java        # App settings & theme toggle
+│
+├── adapter/                     # RecyclerView adapters
+├── database/                    # Local SQLite DAOs & helpers
+├── model/                       # Data models (Transaction, Trip, Loan...)
+├── network/                     # Supabase API clients
+├── service/                     # Background services
+├── util/ & utils/               # Helper utilities
+└── worker/                      # WorkManager background tasks
 🎨 Design Highlights
-Minimal & distraction-free UI
-Smooth canvas interactions
-Fast rendering engine
-Responsive layout for all devices
+Glassmorphism UI – frosted glass cards, gradient backgrounds
+Premium Dark Theme – deep charcoal/navy palette with vivid accents
+Light Theme – clean whites with matching gradient extrapolation from dark theme
+Animated Splash Screen – custom logo animation with physics-based motion
+Neon Accent Avatars – dark background with neon-blue profile avatar styling
+🤝 Contributing
+Contributions, issues, and feature requests are welcome!
+
+Fork the repo
+Create your feature branch (git checkout -b feature/amazing-feature)
+Commit your changes (git commit -m 'Add some amazing feature')
+Push to the branch (git push origin feature/amazing-feature)
+Open a Pull Request
 📜 License
-
 This project is licensed under the MIT License — see the LICENSE file for details.
+  
 
-💡 Author
-
-Arpitsinh Thakor
-
-⭐ Support
-
-If you like this project, don’t forget to ⭐ the repo — it really helps!
